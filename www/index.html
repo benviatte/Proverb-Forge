@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <title>Proverb Forge</title>
+</head>
+<body>
+  <div class="app">
+	<div id="intro">
+	<img id="intro" src="img/explanation.png"/>
+	</div>
+	<div class="proverbs">
+	<p id="proverb1"></p>
+	<img id="flower-break" src="img/flower-break.png"/>
+	<p id="proverb2"></p>
+	</div>
+  </div>
+	<button type="button" onclick="proverbButton()" id="proverb-button">Spark the forge!</button>
+	<img id="info-button" onclick="infoButton()" src="img/info.png"/>
+	<div id="language-buttons">
+	<a id="english" href="http://proverbforge.thehermitcrab.org">
+	<img src="img/english.png"/></a><br/>
+	<a id="french" href="http://proverbforge.thehermitcrab.org/fr">
+	<img src="img/french.png"/></a>
+	</div>
+	<a id="facebook" title="send to Facebook" 
+		href="http://www.facebook.com/proverbforge"
+		target="_blank">
+		<img src="img/post-this.png" alt="Post this proverb on facebook!" />
+	</a>
+	<div id="info-box">
+	<p>Every time you spark the forge, two classic proverbs are thrown into the kiln. They are both cut halfway and their second half is switched around. That makes for thousands of possibilities! No dark magic, guaranteed.</p>
+	<img id="flower-break-2" src="img/flower-break.png"/>
+	<p class="signature">By Ben Viatte and Thomas Viatte. Like you, We hate ads! We are ad-free: if you want to support us, consider donating, however little, or posting on facebook.</p>
+	<a href="mailto:ben@thehermitcrab.org">
+	<img class="feedback" src="img/feedback.png"/></a>
+	<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GW4GXYEXRKP9C&lc=CH&item_name=Proverb%20Generator&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
+	<img class="donate" src="img/donate.png"/>
+	</a>
+	</div>
+	<div id="clear-tape" onclick="closeInfoBox()"></div>
+				
+				
+     <script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/firsthalf.js"></script>
+	<script type="text/javascript" src="js/secondhalf.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+            app.initialize();
+  </script>
+  </body>
+</html>

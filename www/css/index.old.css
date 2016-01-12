@@ -1,0 +1,332 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+ 
+@font-face {
+    font-family: 'calligraffiti';
+    src: url('../font/calligraffiti-webfont.eot');
+    src: url('../font/calligraffiti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/calligraffiti-webfont.woff2') format('woff2'),
+         url('../font/calligraffiti-webfont.woff') format('woff'),
+         url('../font/calligraffiti-webfont.ttf') format('truetype'),
+         url('../font/calligraffiti-webfont.svg#calligraffitiregular') format('svg');
+    font-style: normal;
+
+}
+ 
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+			box-sizing: border-box;
+}
+
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+		background-image: url(../img/paper-texture-light.jpg);
+    background-attachment: fixed;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+		overflow-x: hidden;
+		overflow-y: hidden;
+}
+
+.app {
+    background-image: url(../img/logo.png);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 210px auto;
+    position:absolute;          /* position in the center of the screen */
+		top:10%;
+		right: 0;
+		left: 0;
+    width:360px;                   /* text area width */
+    text-align:center;
+    padding: 110px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: 0 auto;  
+	
+}
+
+
+.center {
+	text-align: center;
+}
+
+
+#clear-tape {
+	opacity: 0;
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	transition: 0.8s;
+	display: none;
+}
+
+.donate, .feedback {
+	width: 60px;
+	margin: 10px 20px 0;
+}
+
+.donate:hover, .feedback:hover {
+	opacity: 0.7;
+}
+
+.feedback {
+	float: left;
+}
+
+.donate {
+	float: right;
+}
+
+#flower-break {
+	width: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	display: none;
+}
+
+#flower-break-2 {
+	width: 60px;
+	margin: 30px auto;
+	display: block;
+}
+
+h1 {
+    font-size:30px;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+		margin-bottom: 20px;
+}
+
+#info-button {
+	position: absolute;
+	bottom: 6%;
+	left: 5%;
+	width: 70px;
+	cursor: pointer;
+}
+
+#info-box {
+	background-image: url("../img/info-box.png");
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: 0.8s;
+	background-size: 100% 100%;
+	text-align: justify;
+	padding: 115px 30px;
+	position: absolute;
+	height: 500px;
+	width: 380px;
+	left: 8%;
+	bottom: 15%;
+	font-family: Verdana, Geneva, sans-serif;
+	line-height: 1.5em;
+	visibility: hidden;
+	z-index: 10;
+	font-size: 1.1em;
+}
+
+#info-box a:visited, a {
+	color: black;
+}
+
+#intro {
+	width: 100%;
+	margin: 15px auto 0;
+	font-family: calligraffiti, Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+}
+
+#language-buttons {
+	position: absolute;
+	bottom: 3%;
+	right: 3%;
+}
+
+#language-buttons img {
+	width: 80px;
+	padding: 8px;
+}
+
+#language-buttons img:hover {
+	opacity: 0.7;
+}
+
+#proverb-button {
+  border-radius:10px;
+	-webkit-border-radius: 10px;
+  color:#FFFFFF;
+  padding:8px 16px;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color:darkred;
+	border: none;
+	font-size: 1.6em;
+	position: absolute;
+	bottom: 10%;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 160px;
+	height: 65px;
+	cursor: pointer
+}
+
+#proverb-button:hover {
+	opacity: 0.8;
+}
+
+#proverb-button:focus {
+	outline: none;
+}
+
+ 
+.proverbs {
+	font-family: calligraffiti;
+	margin: 0px 0 60px 0;
+	font-size: 2.2em;
+	position: absolute;
+	width: 100%;
+}
+
+.second {
+	color: darkred;
+	display: inline-block;
+}
+
+.signature {
+	font-size: 95%;
+	text-align: center;
+	line-height: 1.3em;
+}
+
+@media screen and (max-width: 400px) {
+	#info-box {
+		left: 2%;
+		padding: 95px 20px;
+		width: 280px;
+		width: 300px;
+		font-size: 1em;
+	}
+	#info-button {
+		left: 3%;
+		bottom: 2%;
+		width: 50px;
+	}
+	#proverb-button {
+		font-size: 1.4em;
+		padding: 6px 10px;
+	}
+	
+	#language-buttons {
+		bottom: 2%;
+	}
+	#language-buttons img {
+		width: 45px;
+		padding: 5px 0 0 0;
+	}
+	.app {
+		width: 250px;
+		background-size: 170px auto;
+	}
+}
+
+@media screen and (max-height: 630px) {
+	#info-box {
+		bottom: 8%;
+		height: 450px;
+	}
+	#flower-break-2 {
+		margin: 15px auto;
+	}
+	#info-button {
+		bottom: 2%;
+	}
+	.proverbs {
+		font-size: 1.6em;
+	}
+	#intro {
+		width: 250px;
+				margin-top: 0;
+	}
+}
+
+@media screen and (min-width: 800px) and (min-height: 550px) {
+.app {
+	width: 500px;
+}
+#intro {
+	width: 350px;
+}
+.proverbs {
+	font-size: 2.5em;
+}
+
+}
+
+@media screen and (max-height: 500px) {
+	#intro {
+		width: 200px;
+		margin-top: 0;
+	}
+		#proverb-button {
+		font-size: 1.1em;
+		width: 150px;
+	height: 50px;
+	}
+	#language-buttons img {
+		width: 50px;
+		padding: 2px;
+	}
+		.app {
+		width: 250px;
+		background-size: 170px auto;
+		padding-top: 90px;
+	}
+}
+
+
+@media screen and (min-height: 700px) {
+
+.proverbs {
+		font-size: 2.5em;
+	}
+#proverb-button {
+	font-size: 1.9em;
+	padding: 6px 10px;
+	width: 250px;
+	}
+#info-box {
+		height: 550px;
+		font-size: 1.3em;
+	}
+	#intro {
+	 margin-top: 10px;
+	 width: 100%;
+}
+}
